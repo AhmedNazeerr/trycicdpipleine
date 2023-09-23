@@ -1,4 +1,4 @@
-name: yarn install workflow
+name: Loop and Print Array
 
 on:
   push:
@@ -10,10 +10,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  yarninstalljob:
+  loopAndPrintJob:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: yarn install
+      - name: Loop and Print
+        run: |
+          myArray=("Item 1" "Item 2" "Item 3" "Item 4")
+
+          for item in "${myArray[@]}"; do
+            echo "Array item: $item"
+          done
         shell: bash
