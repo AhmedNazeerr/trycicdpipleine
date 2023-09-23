@@ -1,44 +1,20 @@
-# name: yarn install workflow
-
-# on:
-#   push:
-#     branches:
-#       - main
-#   pull_request:
-#     branches:
-#       - main
-#   workflow_dispatch:
-
-# jobs:
-#   yarninstalljob:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Install Dependencies
-#         run: npm install
-#         shell: bash
-
-
-name: NPM Install
+name: yarn install workflow
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  npm_install:
+  yarninstalljob:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14' # You can specify the Node.js version you need
-
-      - name: Install dependencies
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
         run: npm install
+        shell: bash
 
