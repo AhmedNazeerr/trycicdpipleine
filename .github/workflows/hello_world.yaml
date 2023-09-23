@@ -1,24 +1,16 @@
-name: hello world workflow
+name: yarn install workflow
 
 on:
   push:
-     branches:
-       - main
+    branches:
+      - main
   pull_request:
-     branches:
-       - main
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  hello:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: npm install
-        shell: bash
-
-  goodbye:
+  yarninstalljob:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
